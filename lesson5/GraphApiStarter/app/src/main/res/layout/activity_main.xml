@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.example.udacity.surfconnect.MainActivity" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:paddingLeft="16dp"
+        app:titleTextColor="@android:color/white"
+        android:background="?attr/colorPrimary" >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+            <ImageView
+                android:id="@+id/friends_button"
+                android:layout_width="28dp"
+                android:layout_height="52dp"
+                app:srcCompat="@drawable/icon_add_friends"
+                android:scaleType="fitCenter"
+                android:layout_marginRight="16dp"
+                app:layout_constraintRight_toLeftOf="@+id/account_button" />
+            <ImageView
+                android:id="@+id/account_button"
+                android:layout_width="28dp"
+                android:layout_height="52dp"
+                app:srcCompat="@drawable/icon_profile_empty"
+                android:scaleType="fitCenter"
+                app:layout_constraintRight_toRightOf="parent" />
+            <EditText
+                android:id="@+id/search_text"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:inputType="textPersonName"
+                android:hint="@string/search_label"
+                android:textColorHint="@color/searchLabel"
+                android:textColor="@color/searchText"
+                android:background="@android:color/white"
+                android:textSize="16sp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_title" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/destination_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"
+        android:clipToPadding="false"
+        app:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/fragment_destination" />
+
+</LinearLayout>

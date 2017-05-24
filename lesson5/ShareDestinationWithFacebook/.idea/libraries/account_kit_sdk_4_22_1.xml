@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="account-kit-sdk-4.22.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/2c5b52bf3571d497b0601c21f25ffe78d343c68f/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/2c5b52bf3571d497b0601c21f25ffe78d343c68f/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

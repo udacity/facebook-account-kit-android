@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.example.udacity.surfconnect.MainActivity" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:paddingLeft="16dp"
+        app:titleTextColor="@android:color/white"
+        android:background="?attr/colorPrimary" >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+            <ImageView
+                android:id="@+id/friends_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:onClick="onClickFriendsButton"
+                app:srcCompat="@drawable/icon_add_friends"
+                android:contentDescription="@string/friends"
+                android:scaleType="fitCenter"
+                android:background="@drawable/toolbar_button_selector"
+                android:padding="6dp"
+                android:layout_marginRight="4dp"
+                app:layout_constraintBottom_toBottomOf="@id/toolbar_title"
+                app:layout_constraintTop_toTopOf="@id/toolbar_title"
+                app:layout_constraintRight_toLeftOf="@+id/account_button" />
+            <ImageView
+                android:id="@+id/account_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:onClick="onClickAccountButton"
+                app:srcCompat="@drawable/icon_profile_empty"
+                android:contentDescription="@string/account"
+                android:scaleType="fitCenter"
+                android:background="@drawable/toolbar_button_selector"
+                android:padding="6dp"
+                app:layout_constraintBottom_toBottomOf="@id/toolbar_title"
+                app:layout_constraintTop_toTopOf="@id/toolbar_title"
+                app:layout_constraintRight_toRightOf="parent" />
+            <EditText
+                android:id="@+id/status_text"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:inputType="textCapSentences"
+                android:hint="@string/status_label"
+                android:textColorHint="@color/statusLabel"
+                android:textColor="@color/statusText"
+                android:background="@android:color/white"
+                android:textSize="16sp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:imeOptions="actionDone"
+                android:imeActionLabel="Done"
+                android:maxLines="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_title"
+                app:layout_constraintRight_toLeftOf="@+id/share_button"/>
+            <ImageButton
+                android:id="@+id/done_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/ic_done_white_24dp"
+                android:contentDescription="@string/done"
+                android:background="@drawable/toolbar_button_selector"
+                android:onClick="onClickDoneButton"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:padding="0dp"
+                android:layout_marginRight="6dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@+id/status_text"
+                app:layout_constraintBottom_toBottomOf="@id/status_text"
+                app:layout_constraintRight_toRightOf="@id/status_text" />
+            <com.facebook.share.widget.ShareButton
+                android:id="@+id/share_button"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_title"
+                app:layout_constraintRight_toRightOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/destination_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"
+        android:clipToPadding="false"
+        app:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/fragment_destination" />
+
+</LinearLayout>
